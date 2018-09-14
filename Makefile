@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/07/17 11:24:40 by cterblan          #+#    #+#              #
-#    Updated: 2018/09/06 15:28:19 by cterblan         ###   ########.fr        #
+#    Created: 2018/09/07 10:04:12 by cterblan          #+#    #+#              #
+#    Updated: 2018/09/14 13:37:55 by cterblan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@
 AUTHOR := cterblan
 #AUTHOR NAME^^^
 
-NAME := {POJECT NAME}
+NAME := ft_ls
 #PROJECT OUTPUT FILE NAME ^^^
 ################################################################################
 #								DIRECTORIES
@@ -33,20 +33,20 @@ LIB_DIR := lib
 #								FILES
 ################################################################################
 #SRC:= ft_function.c
-SRC :=	{FILES}
+SRC := 
 #ADD SOURCE FILES HERE ^^^
 OBJ := $(addprefix $(OBJ_DIR)/, $(SRC:%.c=%.o))
 ################################################################################
 #								LIBRARIES
 ################################################################################
 #NAME_DIR := $(LIBDIR)/{library}
-{LIBRARY}_DIR := $(LIB_DIR)/{LIBRARY}
+PRINTF_DIR := $(LIB_DIR)/ft_printf
 #ADD ADDITIONAL LIBRARIES HERE ^^^
-LIB_FLAG := -l{LIBRARY NAME WITHOUT THE "lib" or file extention}
+LIB_FLAG := -lftprintf
 ################################################################################
 #								COMPILER
 ################################################################################
-CFLAGS := -Wall -Werror -Wextra
+CFLAGS := -Wall -Werror -Wextra -g
 #ADD ADDITIONAL FLAGS HERE ^^^
 CC := gcc $(CFLAGS)
 ################################################################################
@@ -56,11 +56,11 @@ CC := gcc $(CFLAGS)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@make all -C $(LIBFT_DIR)/
+	@make all -C $(PRINTF_DIR)/
 	@echo "\033[35m\t\t[COMPILING] $@\033"
-	@#$(CC) -o $@ -I $(INC_DIR) -L $(LIBFT_DIR)/ $(LIB_FLAG) $(OBJ)
+	@$(CC) -o $@ -I $(INC_DIR) -L $(PRINTF_DIR)/ $(LIB_FLAG) $(OBJ)
 	@#COMPILE EXECUTABLE ^^^^^
-	@#ar rcs $(NAME).a $(OBJ) $(LIBFT_DIR)/obj/*.o^
+	@#ar rcs $(NAME).a $(OBJ) $(PRINTF_DIR)/obj/*.o
 	@#COMPILE LIBRARY ^^^^^^^
 	@echo "\033[32m\t\t[COMPILED SUCCESSFULLY]\033"
 	@#DON'T TOUCH ^^^
@@ -73,23 +73,25 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@#DON'T TOUCH ^^^
 
 clean: cleanlib
+	@echo "\033[33m\t\t[FT_LS]\033[0m"
 	@echo "\033[31m\t\t[CLEANING]\t$(OBJ_DIR)\033[0m"
 	@rm -rf $(OBJ_DIR)
 	@#DON'T TOUCH ^^^
 
 cleanlib:
 	@echo "\033[31m\t\t[CLEANING]\t$(LIB_DIR)\033[0m"
-	@make clean -C $({LIBRARY}_DIR)
+	@make clean -C $(PRINTF_DIR)
 	@#ADD ADDITIONAL LIBRARIES HERE ^^^
 
 fclean: clean fcleanlib
+	@echo "\033[33m\t\t[FT_LS]\033[0m"
 	@echo "\033[31m\t\t[FCLEAN]\t$(NAME)\033[0m"
 	@rm -f $(NAME)
 	@#ADD ADDITIONAL NAME FILES HERE ^^^
 
 fcleanlib:
-	@echo "\033[31m\t\t[FCLEAN]\t$(LIB_DIR)]\033[0m"
-	@make fclean -C $({LIBRARY}_DIR)
+	@echo "\033[31m\t\t[FCLEAN]\t$(LIB_DIR)\033[0m"
+	@make fclean -C $(PRINTF_DIR)
 	@#ADD ADDITIONAL LIBRARIES HERE ^^^
 
 re: fclean all
