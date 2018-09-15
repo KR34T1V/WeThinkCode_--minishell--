@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_minishell.h                                     :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/14 15:46:19 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/14 15:48:15 by cterblan         ###   ########.fr       */
+/*   Created: 2018/06/22 12:36:23 by cterblan          #+#    #+#             */
+/*   Updated: 2018/09/15 10:44:11 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_MINISHELL_H
-# define FT_MINISHELL_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-#include "../lib/ft_printf/inc/ft_printf.h"
+# define BUFF_SIZE 500
 
+# include "minishell.h"
+
+int	get_next_line(int const fd, char **line);
+int	ft_get_next_line(int const fd, char **line, char **stat);
+int	checkloop(int const fd, char **line, char **stat);
 #endif
