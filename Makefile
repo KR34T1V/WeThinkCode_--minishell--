@@ -6,7 +6,7 @@
 #    By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/07 10:04:12 by cterblan          #+#    #+#              #
-#    Updated: 2018/09/14 13:37:55 by cterblan         ###   ########.fr        #
+#    Updated: 2018/09/15 12:46:32 by cterblan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@
 AUTHOR := cterblan
 #AUTHOR NAME^^^
 
-NAME := ft_ls
+NAME := minishell
 #PROJECT OUTPUT FILE NAME ^^^
 ################################################################################
 #								DIRECTORIES
@@ -33,7 +33,9 @@ LIB_DIR := lib
 #								FILES
 ################################################################################
 #SRC:= ft_function.c
-SRC := 
+SRC :=	get_next_line.c\
+		min_main.c\
+		min_welcome.c\
 #ADD SOURCE FILES HERE ^^^
 OBJ := $(addprefix $(OBJ_DIR)/, $(SRC:%.c=%.o))
 ################################################################################
