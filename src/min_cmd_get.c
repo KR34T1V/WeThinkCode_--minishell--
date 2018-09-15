@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   min_main.c                                         :+:      :+:    :+:   */
+/*   min_cmd_get.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/15 10:34:38 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/15 15:19:09 by cterblan         ###   ########.fr       */
+/*   Created: 2018/09/15 14:08:17 by cterblan          #+#    #+#             */
+/*   Updated: 2018/09/15 15:01:50 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-int		main(void)
+void	min_cmd_get(char *cmd)
 {
-	char	*line;
+	int		ac;
+	char	**av;
 
-	min_welcome();
-	while (1)
-	{
-		ft_printf("\e[93m[=> \e[96m");
-		get_next_line(1, &line);
-	//	min_cmd_get();
-	//	min_cmd_exe();
-	}
-	return (0);
+	ac = ft_wordcount(cmd, ' ');
+	av = ft_strsplit(cmd, ' ');
+	min_cmd_exe(ac, av);
 }

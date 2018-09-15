@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   min_main.c                                         :+:      :+:    :+:   */
+/*   min_cmd_exe.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/15 10:34:38 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/15 15:19:09 by cterblan         ###   ########.fr       */
+/*   Created: 2018/09/15 14:00:26 by cterblan          #+#    #+#             */
+/*   Updated: 2018/09/15 15:10:18 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-int		main(void)
+void	min_cmd_exe(int const ac, char const **av/*, char const **env*/)
 {
-	char	*line;
+	pid_t	pid;
 
-	min_welcome();
-	while (1)
+	pid = fork();
+	if (pid < 0)
 	{
-		ft_printf("\e[93m[=> \e[96m");
-		get_next_line(1, &line);
-	//	min_cmd_get();
-	//	min_cmd_exe();
+		ft_printf("\e[5mBlink[=>");
 	}
-	return (0);
-}
+	if (pid == 0)
+	{
+	}

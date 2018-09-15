@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/14 15:46:19 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/15 12:45:54 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/15 15:01:29 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,7 @@
 # include "get_next_line.h"
 
 void	min_welcome(void);
+void	min_cmd_get(char *cmd);
+void	min_cmd_exe(int const ac, char const **av/*, char const **env*/);
 
 #endif
