@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_wordcount_white.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/14 15:46:19 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/16 09:08:09 by cterblan         ###   ########.fr       */
+/*   Created: 2018/06/08 13:07:50 by cterblan          #+#    #+#             */
+/*   Updated: 2018/09/16 09:07:31 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_MINISHELL_H
-# define FT_MINISHELL_H
+#include "../inc/minishell.h"
 
-# include "../lib/ft_printf/inc/ft_printf.h"
-# include "get_next_line.h"
+int		ft_wordcount_white(const char *s)
+{
+	unsigned int	words;
+	unsigned int	i;
 
-int		ft_wordcount_white(const char *s);
-char	**ft_strsplit_white(const char *s);
-void	min_welcome(void);
-void	min_cmd_get(char *cmd);
-void	min_cmd_exe(int const ac, char const **av, char const **env);
-
-#endif
+	words = 0;
+	i = 0;
+	if (!s)
+		return (0);
+	if (!(ft_isspace(s[i])))
+		words++;
+	while (s[i] != '\0')
+	{
+		if (ft_isspace(s[i]))
+		{
+			while (ft_isspace(s[i]))
+				i++;
+			words++;
+		}
+		i++;
+	}
+	return (words);
+}
