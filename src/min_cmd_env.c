@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   min_exit.c                                         :+:      :+:    :+:   */
+/*   min_cmd_env.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/16 09:47:05 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/16 09:52:56 by cterblan         ###   ########.fr       */
+/*   Created: 2018/09/16 09:56:17 by cterblan          #+#    #+#             */
+/*   Updated: 2018/09/16 10:02:43 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-int		min_exit()
+int		min_cmd_env(char **env)
 {
-	exit(0);
-	return (1);
+	int		i;
+
+	i = 0;
+	while (env[i] != NULL)
+		ft_printf("%s\n", env[i++]);
+	return (0);
 }
