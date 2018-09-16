@@ -6,7 +6,7 @@
 #    By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/07 10:04:12 by cterblan          #+#    #+#              #
-#    Updated: 2018/09/16 09:05:18 by cterblan         ###   ########.fr        #
+#    Updated: 2018/09/16 09:31:19 by cterblan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,9 +33,12 @@ LIB_DIR := lib
 #								FILES
 ################################################################################
 #SRC:= ft_function.c
-SRC :=	get_next_line.c\
+SRC :=	ft_strsplit_white.c\
 		ft_wordcount_white.c\
-		ft_strsplit_white.c\
+		get_next_line.c\
+		min_cmd_builtin.c\
+		min_cmd_get.c\
+		min_echo.c\
 		min_main.c\
 		min_welcome.c\
 #ADD SOURCE FILES HERE ^^^

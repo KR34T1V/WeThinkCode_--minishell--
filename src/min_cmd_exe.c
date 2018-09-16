@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/15 14:00:26 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/16 09:09:06 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/16 09:30:46 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	min_cmd_exe(int const ac, char const **av, char const **env)
 {
 	pid_t	pid;
 
+	env = NULL;
 	pid = fork();
 	if (pid < 0)
 	{

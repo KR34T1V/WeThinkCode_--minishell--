@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/15 10:34:38 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/15 15:19:09 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/16 09:24:01 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ int		main(void)
 	{
 		ft_printf("\e[93m[=> \e[96m");
 		get_next_line(1, &line);
-	//	min_cmd_get();
-	//	min_cmd_exe();
+		min_cmd_get(line);
 	}
 	return (0);
 }
