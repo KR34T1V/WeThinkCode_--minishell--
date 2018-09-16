@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/16 11:41:56 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/16 11:45:47 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/16 14:35:23 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 char	*min_env_get_var(char *str)
 {
 	int		i;
-	char	*fre;
+	char	*fre = NULL;
 	char	*var;
 
 	var = ft_strdup(str);
-	i = ft_strlen(str);
+	i = (ft_strlen(str) - 1);
 	if (var[i] != '=')
 	{
 		fre = var;
-		var = ft_strjoin(fre, "=");
-		free(fre);
+		var = ft_strjoin(var, "=");
+		ft_strdel(&fre);
 	}
 	return (var);
 }

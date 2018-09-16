@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   min_env_add_var.c                                  :+:      :+:    :+:   */
+/*   min_env_add.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/16 11:52:33 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/16 14:45:26 by cterblan         ###   ########.fr       */
+/*   Created: 2018/09/16 10:40:13 by cterblan          #+#    #+#             */
+/*   Updated: 2018/09/16 13:25:24 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-void	min_env_add_var(char ***env, char *var)
+char	**min_env_add(char **env, char *new)
 {
 	int		i;
-	int		j;
 	char	**tmp;
-	char	**new;
 
+	tmp = env;
 	i = 0;
-	j = 0;
-	tmp = *env;
-	while (tmp[j])
-		j++;
-	new = (char **)ft_memalloc((sizeof(char *) * (j + 1)));
+	env = (char **)ft_memalloc(sizeof(tmp) + (sizeof(char *)));
 	while (tmp[i])
 	{
-		new[i] = ft_strdup(tmp[i]);
+		env[i] = ft_strdup(tmp[i]);
 		i++;
 	}
-	tmp[i] = ft_strdup(var);
-	tmp[++i] = NULL;
-	env = &new;
+	env[i] = ft_strdup(new);
+	env[++i] = NULL;
+	free(tmp);
+	ft_strdel(&new);
+	return (env);
 }
