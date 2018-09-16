@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   min_cmd_get.c                                      :+:      :+:    :+:   */
+/*   min_env_get.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/15 14:08:17 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/16 10:28:28 by cterblan         ###   ########.fr       */
+/*   Created: 2018/09/16 10:19:18 by cterblan          #+#    #+#             */
+/*   Updated: 2018/09/16 10:29:21 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-void	min_cmd_get(char *cmd)
+char	**min_env_get(char **env)
 {
-	int				ac;
-	char			**av;
-	extern char		**environ;
-	int				i;
+	int		i;
+	char	**new;
 
-	ac = ft_wordcount_white(cmd);
-	av = ft_strsplit_white(cmd);
-	i = min_cmd_builtin(ac, av, environ);
-	environ = min_env_get(environ);
-	// if (i == 0)
-		// min_cmd_exe(ac, av, environ);
+	i = 0;
+	new = (char **)ft_memalloc(sizeof(env));
+	while (env[i])
+	{
+		new[i] = ft_strdup(env[i]);
+		i++;
+	}
+	return (new);
 }

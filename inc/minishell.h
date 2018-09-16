@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/14 15:46:19 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/16 10:02:14 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/16 10:27:43 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int		ft_wordcount_white(const char *s);
 char	**ft_strsplit_white(const char *s);
 void	min_welcome(void);
 void	min_cmd_get(char *cmd);
+char	**min_env_get(char **env);
 int		min_cmd_builtin(int ac, char **av, char **env);
 void	min_cmd_exe(int ac, char **av, char **env);
 /*

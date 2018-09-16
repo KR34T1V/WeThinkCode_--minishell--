@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   min_cmd_get.c                                      :+:      :+:    :+:   */
+/*   min_cmd_setenv.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/15 14:08:17 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/16 10:28:28 by cterblan         ###   ########.fr       */
+/*   Created: 2018/09/16 10:06:05 by cterblan          #+#    #+#             */
+/*   Updated: 2018/09/16 10:11:31 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-void	min_cmd_get(char *cmd)
+int		min_cmd_setenv(int ac, char **av, char **env)
 {
-	int				ac;
-	char			**av;
-	extern char		**environ;
-	int				i;
+	int		i;
 
-	ac = ft_wordcount_white(cmd);
-	av = ft_strsplit_white(cmd);
-	i = min_cmd_builtin(ac, av, environ);
-	environ = min_env_get(environ);
-	// if (i == 0)
-		// min_cmd_exe(ac, av, environ);
+	i = 1;
+	if (ac <= 1)
+		ft_printf("\e[91mUsage VAR=[VAL] or VAR [VAL]\e[96m");
+	else if (ac > 1)
 }
