@@ -6,13 +6,14 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/16 09:47:05 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/16 09:47:53 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/16 09:52:56 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-void	min_exit()
+int		min_exit()
 {
 	exit(0);
+	return (1);
 }

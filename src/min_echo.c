@@ -6,13 +6,13 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/16 09:13:58 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/16 09:43:10 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/16 09:53:03 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-void	min_echo(int ac, char **av)
+int		min_echo(int ac, char **av)
 {
 	int		i;
 	int		c;
@@ -36,4 +36,5 @@ void	min_echo(int ac, char **av)
 		}
 	}
 	ft_printf("\n");
+	return (1);
 }
