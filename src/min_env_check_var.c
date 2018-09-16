@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   min_cmd_setenv.c                                   :+:      :+:    :+:   */
+/*   min_env_check_var.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/16 10:06:05 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/16 13:00:59 by cterblan         ###   ########.fr       */
+/*   Created: 2018/09/16 11:47:34 by cterblan          #+#    #+#             */
+/*   Updated: 2018/09/16 11:51:58 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-int		min_cmd_setenv(int ac, char **av, char **env)
+int		min_env_check_var(char **env, char *var)
 {
 	int		i;
-	char	*tmp;
-	char	*var;
-	char	**fre;
+	int		len;
 
-	i = 1;
-	if (ac <= 1)
-		ft_printf("\e[91mUsage:\n\tsetenv [VARIABLE] [VALUE]\e[96m\n");
-	else if (ac > 1)
+	i = 0;
+	len = ft_strlen(var);
+	while (env[i])
 	{
-		var = min_env_get_var(av[0]);
-		tmp = var;
-		if (min_env_check_var(env, var))
-			min_env_set_val(env, var, av[1]);
-		else
-		{
-			fre = env;
-			env = min_env_add_var(env, var);
-			min_env_set_val(env, var, av[1]);
-			free(fre);
-		}
-		free(tmp);
+		if (0 == ft_strncmp(env[i], var, len))
+			return (1);
+		i++;
 	}
-	return (0);
+	return(0);
 }

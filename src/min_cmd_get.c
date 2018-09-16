@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/15 14:08:17 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/16 11:22:17 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/16 13:03:38 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	min_cmd_get(char *cmd)
 
 	ac = ft_wordcount_white(cmd);
 	av = ft_strsplit_white(cmd);
-	environ = min_env_get(environ);
+	min_env_get(&environ, environ);
 	i = min_cmd_builtin(ac, av, environ);
 	// if (i == 0)
 		// min_cmd_exe(ac, av, environ);
