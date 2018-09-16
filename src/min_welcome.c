@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/15 10:56:38 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/16 09:43:49 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/16 09:50:03 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	min_welcome(void)
 	ft_printf("|                                                          |\n");
 	ft_printf("|          The Following Commands Work:                    |\n");
 	ft_printf("|                                      echo                |\n");
+	ft_printf("|                                      exit/quit           |\n");
 	ft_printf("|__________________________________________________________|\n");
 	ft_printf("\n\e[0m");
 }

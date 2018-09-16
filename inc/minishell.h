@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/14 15:46:19 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/16 09:32:52 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/16 09:48:01 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ void	min_cmd_exe(int ac, char **av, char **env);
 ** Builtin Commands
 */
 void	min_echo(int ac, char **av);
+void	min_exit();
 
 #endif
