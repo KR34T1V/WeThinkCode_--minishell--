@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/14 15:46:19 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/17 10:32:07 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/17 14:53:32 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,16 @@ size_t	ft_sizeof2d_char(char **t);
 void	ft_free2d_char(char **array);
 int		min_welcome(void);
 int		min_cmd_help(void);
-void	min_cmd_get(char *cmd, char ***environ);
+void	min_cmd_get(char *cmd, char ***env);
 char **	min_env_get(char **env);
-int		min_cmd_builtin(int ac, char **av, char **env);
+int		min_cmd_builtin(int ac, char **av, char ***env);
 void	min_cmd_exe(int ac, char **av, char **env);
 /*
 ** Builtin Commands
 */
 int		min_cmd_echo(int ac, char **av);
-int		min_cmd_env(char **env);
-int		min_cmd_setenv(int ac, char **av, char **env);
+int		min_cmd_env(char ***env);
+int		min_cmd_setenv(int ac, char **av, char ***env);
 int		min_cmd_exit(void);
 /*
 ** ENV FUNCTIONS
@@ -39,6 +39,6 @@ int		min_cmd_exit(void);
 void	min_env_add_var(char ***env, char *var);
 int		min_env_check_var(char **env, char *var);
 char	*min_env_get_var(char *str);
-void	min_env_set_val(char **env, char *var, char *val);
+void	min_env_set_val(char ***env, char *var, char *val);
 
 #endif

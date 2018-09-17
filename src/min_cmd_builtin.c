@@ -6,13 +6,13 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/16 09:09:32 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/17 07:26:13 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/17 15:15:54 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-int		min_cmd_builtin(int ac, char **av, char **env)
+int		min_cmd_builtin(int ac, char **av, char ***env)
 {
 	int		i;
 

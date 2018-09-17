@@ -6,13 +6,13 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/15 14:08:17 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/17 11:08:44 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/17 14:50:48 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-void	min_cmd_get(char *cmd, char ***environ)
+void	min_cmd_get(char *cmd, char ***env)
 {
 	int				i;
 	int				ac;
@@ -23,12 +23,12 @@ void	min_cmd_get(char *cmd, char ***environ)
 	av = ft_strsplit_white(cmd);
 	if (toggle == 0)
 	{
-		*environ = min_env_get(*environ);
+		*env = min_env_get(*env);
 		toggle = 1;
 	}
 	else if (toggle != 1)
 		toggle = 0;
-	i = min_cmd_builtin(ac, av, *environ);
+	i = min_cmd_builtin(ac, av, env);
 	// if (i == 0)
 		// min_cmd_exe(ac, av, environ);
 	ft_free2d_char(av);

@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/16 10:19:18 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/17 11:07:58 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/17 15:21:44 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ char ** min_env_get(char **env)
 		i++;
 	}
 	new[i] = NULL;
+	i = 0;
 	return new;
 }
