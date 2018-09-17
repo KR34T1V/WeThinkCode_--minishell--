@@ -6,7 +6,7 @@
 #    By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/07 10:04:12 by cterblan          #+#    #+#              #
-#    Updated: 2018/09/16 12:40:38 by cterblan         ###   ########.fr        #
+#    Updated: 2018/09/17 07:25:28 by cterblan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ SRC :=	ft_strsplit_white.c\
 		get_next_line.c\
 		min_cmd_builtin.c\
 		min_cmd_get.c\
+		min_cmd_help.c\
 		min_cmd_setenv.c\
 		min_env_add_var.c\
 		min_env_check_var.c\
