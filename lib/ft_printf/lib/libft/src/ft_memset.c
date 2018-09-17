@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/23 07:55:24 by cterblan          #+#    #+#             */
-/*   Updated: 2018/07/26 13:31:32 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/17 08:29:43 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ void	*ft_memset(void *mem, int c, size_t len)
 	{
 		*ptr++ = c;
 	}
+	*ptr = c;
 	return (mem);
 }

@@ -6,7 +6,7 @@
 #    By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/07 10:04:12 by cterblan          #+#    #+#              #
-#    Updated: 2018/09/17 07:25:28 by cterblan         ###   ########.fr        #
+#    Updated: 2018/09/17 09:55:49 by cterblan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,8 @@ LIB_DIR := lib
 #								FILES
 ################################################################################
 #SRC:= ft_function.c
-SRC :=	ft_strsplit_white.c\
+SRC :=	ft_sizeof_array.c\
+		ft_strsplit_white.c\
 		ft_wordcount_white.c\
 		get_next_line.c\
 		min_cmd_builtin.c\

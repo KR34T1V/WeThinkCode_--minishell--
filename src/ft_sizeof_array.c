@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   min_env_get.c                                      :+:      :+:    :+:   */
+/*   ft_sizeof_array.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/16 10:19:18 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/17 09:54:56 by cterblan         ###   ########.fr       */
+/*   Created: 2018/09/17 09:52:16 by cterblan          #+#    #+#             */
+/*   Updated: 2018/09/17 09:55:25 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-char ** min_env_get(char **env)
+size_t	ft_sizeof_array(char **t)
 {
-	int		i;
-	char	**new;
-
-	i = 0;
-	new = (char **)ft_memalloc(ft_sizeof_array(env) * sizeof(char *));
-	while (env[i])
-	{
-		new[i] = ft_strdup(env[i]);
+	size_t i = 0;
+	while (t[i])
 		i++;
-	}
-	new[i] = NULL;
-	return new;
+	return (i + 1);
 }
