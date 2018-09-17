@@ -6,7 +6,7 @@
 #    By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/07 10:04:12 by cterblan          #+#    #+#              #
-#    Updated: 2018/09/17 10:13:22 by cterblan         ###   ########.fr        #
+#    Updated: 2018/09/17 15:54:43 by cterblan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ SRC :=	ft_free2d_char.c\
 		min_cmd_builtin.c\
 		min_cmd_get.c\
 		min_cmd_help.c\
+		min_cmd_pwd.c\
 		min_cmd_setenv.c\
 		min_env_add_var.c\
 		min_env_check_var.c\
