@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/16 11:52:33 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/17 15:28:40 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/17 15:39:50 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,5 @@ void	min_env_add_var(char ***env, char *var)
 	new[i] = ft_strdup(var);
 	new[++i] = NULL;
 	*env = new;
+	ft_free2d_char(tmp);
 }
