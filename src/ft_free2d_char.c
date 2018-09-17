@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 10:04:08 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/17 10:12:53 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/17 11:04:35 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ void	ft_free2d_char(char **array)
 			ft_strdel(&array[i++]);
 		free(array);
 	}
+	array = NULL;
 }

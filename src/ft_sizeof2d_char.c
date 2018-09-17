@@ -6,16 +6,23 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 09:52:16 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/17 10:08:57 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/17 10:18:39 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-size_t	ft_sizeof2d_char(char **t)
+size_t	ft_sizeof2d_char(char **array)
 {
-	size_t i = 0;
-	while (t[i])
-		i++;
-	return (i + 1);
+	size_t i;
+
+	if (array)
+	{
+		i = 0;
+		while (array[i])
+			i++;
+		return (i + 1);
+	}
+	else
+		return (0);
 }
