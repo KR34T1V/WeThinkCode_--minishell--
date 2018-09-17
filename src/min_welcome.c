@@ -6,13 +6,13 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/15 10:56:38 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/16 10:03:34 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/17 07:15:26 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-void	min_welcome(void)
+int		min_welcome(void)
 {
 	ft_printf("\033[32m\n");
 	ft_printf("************************************************************\n");
@@ -25,4 +25,5 @@ void	min_welcome(void)
 	ft_printf("|                                      exit/quit           |\n");
 	ft_printf("|__________________________________________________________|\n");
 	ft_printf("\n\e[0m");
+	return (0);
 }
