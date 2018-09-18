@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/15 14:08:17 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/17 14:50:48 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/18 09:37:18 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	min_cmd_get(char *cmd, char ***env)
 	static int		toggle;
 	char			**av;
 
+	i = 1;
 	ac = ft_wordcount_white(cmd);
 	av = ft_strsplit_white(cmd);
 	if (toggle == 0)
@@ -29,7 +30,9 @@ void	min_cmd_get(char *cmd, char ***env)
 	else if (toggle != 1)
 		toggle = 0;
 	i = min_cmd_builtin(ac, av, env);
-	// if (i == 0)
+	// if (i != 0)
 		// min_cmd_exe(ac, av, environ);
+	if (i != 0)
+		ft_printf("\e[31mUnkown Command!\n\e[96m");
 	ft_free2d_char(av);
 }

@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/16 09:09:32 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/18 09:13:11 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/18 09:27:31 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ int		min_cmd_builtin(int ac, char **av, char ***env)
 	i = 1;
 	if (av[0] && 0 == ft_strcmp(av[0], "help"))
 		i = min_cmd_help();
-	if (av[0] && 0 == ft_strcmp(av[0], "echo"))
+	else if (av[0] && 0 == ft_strcmp(av[0], "echo"))
 		i = min_cmd_echo(ac, av);
-	if (av[0] && 0 == ft_strcmp(av[0], "pwd"))
+	else if (av[0] && 0 == ft_strcmp(av[0], "pwd"))
 		i = min_cmd_pwd(env);
-	if (av[0] && 0 == ft_strcmp(av[0], "env"))
+	else if (av[0] && 0 == ft_strcmp(av[0], "env"))
 		i = min_cmd_env(env);
-	if (av[0] && 0 == ft_strcmp(av[0], "setenv"))
+	else if (av[0] && 0 == ft_strcmp(av[0], "setenv"))
 		i = min_cmd_setenv(ac, av, env);
-	if (av[0] && 0 == ft_strcmp(av[0], "unsetenv"))
+	else if (av[0] && 0 == ft_strcmp(av[0], "unsetenv"))
 		i = min_cmd_unsetenv(ac, av, env);
-	if (av[0] && (0 == ft_strcmp(av[0], "exit") ||
+	else if (av[0] && (0 == ft_strcmp(av[0], "exit") ||
 		0 == ft_strcmp(av[0], "quit")))
 		i = min_cmd_exit();
 	return (i);
