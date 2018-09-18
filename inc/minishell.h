@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/14 15:46:19 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/17 15:54:26 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/18 09:13:04 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int		min_cmd_echo(int ac, char **av);
 int		min_cmd_pwd(char ***env);
 int		min_cmd_env(char ***env);
 int		min_cmd_setenv(int ac, char **av, char ***env);
+int		min_cmd_unsetenv(int ac, char **av, char ***env);
 int		min_cmd_exit(void);
 /*
 ** ENV FUNCTIONS
@@ -41,5 +42,6 @@ void	min_env_add_var(char ***env, char *var);
 int		min_env_check_var(char **env, char *var);
 char	*min_env_get_var(char *str);
 void	min_env_set_val(char ***env, char *var, char *val);
+void	min_env_unset(char ***env, char *var);
 
 #endif

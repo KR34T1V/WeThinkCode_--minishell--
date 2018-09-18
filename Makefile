@@ -6,7 +6,7 @@
 #    By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/07 10:04:12 by cterblan          #+#    #+#              #
-#    Updated: 2018/09/17 15:54:43 by cterblan         ###   ########.fr        #
+#    Updated: 2018/09/18 09:13:42 by cterblan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ SRC :=	ft_free2d_char.c\
 		min_cmd_help.c\
 		min_cmd_pwd.c\
 		min_cmd_setenv.c\
+		min_cmd_unsetenv.c\
 		min_env_add_var.c\
 		min_env_check_var.c\
 		min_env_get_var.c\
@@ -51,6 +52,7 @@ SRC :=	ft_free2d_char.c\
 		min_cmd_echo.c\
 		min_cmd_env.c\
 		min_cmd_exit.c\
+		min_env_unset.c\
 		min_main.c\
 		min_welcome.c\
 #ADD SOURCE FILES HERE ^^^
