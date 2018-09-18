@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   min_main.c                                         :+:      :+:    :+:   */
+/*   min_cmd_exe_select.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/15 10:34:38 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/18 14:36:15 by cterblan         ###   ########.fr       */
+/*   Created: 2018/09/18 14:45:49 by cterblan          #+#    #+#             */
+/*   Updated: 2018/09/18 15:01:58 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-int		main(void)
+int		check_av_path(char **av)
 {
-	char			*line;
-	extern char		**environ;
+	int		i;
 
-	min_welcome();
-	while (1)
+	if (av[0])
 	{
-		ft_printf("\e[93m[=> \e[96m");
-		get_next_line(1, &line);
-		min_cmd_get(line, &environ);
-		ft_strdel(&line);
+		i = ft_strlen(av[0]);
+		while (i >= 0 && av[0])
+		{
+			if (av[0][i] == '/')
+				return (1);
+			i--;
+		}
 	}
-	sleep(5);
-	ft_free2d_char(environ);
+	return (0);
+}
+
+int		min_cmd_exe_select(char **av, char ***env)
+{
+	if (check_av_path(av))
+		min_cmd_path_exe(av, env);
+	else
+		min_cmd_exe(av, env);
 	return (0);
 }

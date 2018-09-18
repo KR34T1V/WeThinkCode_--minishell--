@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/15 14:00:26 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/18 14:00:51 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/18 14:42:19 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int		min_cmd_exe(char **av, char ***env)
 {
 	pid_t	pid;
 	char	*path;
-	//char 	*args[] = {"ls", "-l" , NULL};
 	
 	path = min_sys_scan_dir(av, env);
 	if (path == NULL)
@@ -24,19 +23,17 @@ int		min_cmd_exe(char **av, char ***env)
 	else
 	{
 		pid = fork();
-		if (pid == 0)
+		if (pid < 0)
 		{
-			execve(path, av, *env);
-		}
-	else if (pid < 0)
-	{
-		free(path);
-		ft_putendl("ERROR: fork failed\n");
+			free(path);
+			ft_putendl("ERROR: fork failed\n");
 		return (-1);
-	}
-	wait(&pid);
-	if (path)
-		free(path);
-	return (0);
-	}
+		}
+		else if (pid == 0)
+			execve(path, av, *env);
+		wait(&pid);
+		if (path)
+			free(path);
+		return (0);
+		}
 }

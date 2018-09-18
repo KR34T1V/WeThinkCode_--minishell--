@@ -6,7 +6,7 @@
 #    By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/07 10:04:12 by cterblan          #+#    #+#              #
-#    Updated: 2018/09/18 12:52:07 by cterblan         ###   ########.fr        #
+#    Updated: 2018/09/18 14:54:51 by cterblan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,10 +42,12 @@ SRC :=	ft_free2d_char.c\
 		min_cmd_cd.c\
 		min_cmd_echo.c\
 		min_cmd_env.c\
+		min_cmd_exe_select.c\
 		min_cmd_exe.c\
 		min_cmd_exit.c\
 		min_cmd_get.c\
 		min_cmd_help.c\
+		min_cmd_path_exe.c\
 		min_cmd_pwd.c\
 		min_cmd_setenv.c\
 		min_cmd_unsetenv.c\

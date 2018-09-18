@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/14 15:46:19 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/18 13:56:04 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/18 14:53:56 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ int		min_cmd_help(void);
 void	min_cmd_get(char *cmd, char ***env);
 char **	min_env_get(char **env);
 int		min_cmd_builtin(int ac, char **av, char ***env);
+int		min_cmd_exe_select(char **av, char ***env);
 int		min_cmd_exe(char **av, char ***env);
+int		min_cmd_path_exe(char **av, char ***env);
 /*
 ** Builtin Commands
 */
