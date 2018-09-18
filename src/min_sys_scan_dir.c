@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   min_cmd_get.c                                      :+:      :+:    :+:   */
+/*   min_sys_scan_dir.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/15 14:08:17 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/18 13:49:11 by cterblan         ###   ########.fr       */
+/*   Created: 2018/09/18 12:09:58 by cterblan          #+#    #+#             */
+/*   Updated: 2018/09/18 13:57:04 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-void	min_cmd_get(char *cmd, char ***env)
+char	*min_sys_scan_dir(char **av, char ***env)
 {
 	int				i;
-	int				ac;
-	static int		toggle;
-	char			**av;
+	char			*path;
+	char			**bins;
+	DIR				*dir;
+	struct dirent	*ent;
 
-	i = 1;
-	ac = ft_wordcount_white(cmd);
-	av = ft_strsplit_white(cmd);
-	if (toggle == 0)
+	i = 0;
+	bins = min_sys_set_path(env);
+	while (bins[i])
 	{
-		*env = min_env_get(*env);
-		toggle = 1;
+		dir = opendir(bins[i]);
+		while ((ent = readdir(dir)) != NULL)
+		{
+			if (av[0] && 0 == ft_strcmp(av[0], ent->d_name))
+			{
+				path = ft_strjoin(bins[i], av[0]);
+				ft_free2d_char(bins);
+				return (path);
+			}
+		}
+		i++;
 	}
-	else if (toggle != 1)
-		toggle = 0;
-	i = min_cmd_builtin(ac, av, env);
-	if (i != 0)
-		i = min_cmd_exe(av, env);
-	if (i != 0)
-		ft_printf("\e[31mUnkown Command!\n\e[96m");
-	ft_free2d_char(av);
+	return (NULL);
 }

@@ -6,22 +6,37 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/15 14:00:26 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/16 09:30:46 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/18 14:00:51 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-void	min_cmd_exe(int const ac, char const **av, char const **env)
+int		min_cmd_exe(char **av, char ***env)
 {
 	pid_t	pid;
-
-	env = NULL;
-	pid = fork();
-	if (pid < 0)
+	char	*path;
+	//char 	*args[] = {"ls", "-l" , NULL};
+	
+	path = min_sys_scan_dir(av, env);
+	if (path == NULL)
+		return (1);
+	else
 	{
-		wait(&pid);
-	}
-	if (pid == 0)
+		pid = fork();
+		if (pid == 0)
+		{
+			execve(path, av, *env);
+		}
+	else if (pid < 0)
 	{
+		free(path);
+		ft_putendl("ERROR: fork failed\n");
+		return (-1);
 	}
+	wait(&pid);
+	if (path)
+		free(path);
+	return (0);
+	}
+}

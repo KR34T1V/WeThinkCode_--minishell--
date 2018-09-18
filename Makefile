@@ -6,7 +6,7 @@
 #    By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/07 10:04:12 by cterblan          #+#    #+#              #
-#    Updated: 2018/09/18 10:44:02 by cterblan         ###   ########.fr        #
+#    Updated: 2018/09/18 12:52:07 by cterblan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,10 @@ SRC :=	ft_free2d_char.c\
 		get_next_line.c\
 		min_cmd_builtin.c\
 		min_cmd_cd.c\
+		min_cmd_echo.c\
+		min_cmd_env.c\
+		min_cmd_exe.c\
+		min_cmd_exit.c\
 		min_cmd_get.c\
 		min_cmd_help.c\
 		min_cmd_pwd.c\
@@ -52,11 +56,10 @@ SRC :=	ft_free2d_char.c\
 		min_env_get.c\
 		min_env_set_path.c\
 		min_env_set_val.c\
-		min_cmd_echo.c\
-		min_cmd_env.c\
-		min_cmd_exit.c\
 		min_env_unset.c\
 		min_main.c\
+		min_sys_scan_dir.c\
+		min_sys_set_path.c\
 		min_welcome.c\
 #ADD SOURCE FILES HERE ^^^
 OBJ := $(addprefix $(OBJ_DIR)/, $(SRC:%.c=%.o))

@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   min_cmd_get.c                                      :+:      :+:    :+:   */
+/*   min_sys_set_path.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/15 14:08:17 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/18 13:49:11 by cterblan         ###   ########.fr       */
+/*   Created: 2018/09/18 11:47:21 by cterblan          #+#    #+#             */
+/*   Updated: 2018/09/18 13:56:05 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-void	min_cmd_get(char *cmd, char ***env)
+char	**min_sys_set_path(char ***env)
 {
-	int				i;
-	int				ac;
-	static int		toggle;
-	char			**av;
+	int		i;
+	char	*tmp;
+	char	**bin;
 
-	i = 1;
-	ac = ft_wordcount_white(cmd);
-	av = ft_strsplit_white(cmd);
-	if (toggle == 0)
+	tmp = min_env_get_val(env, "PATH=");
+	bin = ft_strsplit(tmp, ':');
+	ft_strdel(&tmp);
+	i = 0;
+	while (bin[i])
 	{
-		*env = min_env_get(*env);
-		toggle = 1;
+		tmp = bin[i];
+		bin[i] = ft_strjoin(tmp, "/");
+		ft_strdel(&tmp);
+		i++;
 	}
-	else if (toggle != 1)
-		toggle = 0;
-	i = min_cmd_builtin(ac, av, env);
-	if (i != 0)
-		i = min_cmd_exe(av, env);
-	if (i != 0)
-		ft_printf("\e[31mUnkown Command!\n\e[96m");
-	ft_free2d_char(av);
+	return (bin);
 }
