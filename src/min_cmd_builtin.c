@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/16 09:09:32 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/18 09:27:31 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/18 10:15:31 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int		min_cmd_builtin(int ac, char **av, char ***env)
 		i = min_cmd_echo(ac, av);
 	else if (av[0] && 0 == ft_strcmp(av[0], "pwd"))
 		i = min_cmd_pwd(env);
+	else if (av[0] && 0 == ft_strcmp(av[0], "cd"))
+		i = min_cmd_cd(ac, av, env);
 	else if (av[0] && 0 == ft_strcmp(av[0], "env"))
 		i = min_cmd_env(env);
 	else if (av[0] && 0 == ft_strcmp(av[0], "setenv"))

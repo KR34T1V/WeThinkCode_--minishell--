@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   min_env_check_var.c                                :+:      :+:    :+:   */
+/*   min_env_set_path.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/16 11:47:34 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/18 10:39:39 by cterblan         ###   ########.fr       */
+/*   Created: 2018/09/18 10:31:51 by cterblan          #+#    #+#             */
+/*   Updated: 2018/09/18 10:39:47 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-int		min_env_check_var(char **env, char *var)
+void	min_env_set_path(char ***env,char *name, char *path)
 {
-	int		i;
-	int		len;
+	char *var;
+	char *tmp;
 
-	i = 0;
-	len = ft_strlen(var);
-	while (env[i])
+	var = min_env_get_var(name);
+	tmp = var;
+	if (min_env_check_var(*env, var))
+		min_env_set_val(env, var, path);
+	else
 	{
-		if (0 == ft_strncmp(env[i], var, len))
-			return (1);
-		i++;
+		min_env_add_var(env, var);
+		min_env_set_val(env, var, path);
 	}
-	return(0);
+	free(tmp);
 }

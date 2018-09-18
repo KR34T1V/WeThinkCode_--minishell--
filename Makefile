@@ -6,7 +6,7 @@
 #    By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/07 10:04:12 by cterblan          #+#    #+#              #
-#    Updated: 2018/09/18 09:13:42 by cterblan         ###   ########.fr        #
+#    Updated: 2018/09/18 10:44:02 by cterblan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ SRC :=	ft_free2d_char.c\
 		ft_wordcount_white.c\
 		get_next_line.c\
 		min_cmd_builtin.c\
+		min_cmd_cd.c\
 		min_cmd_get.c\
 		min_cmd_help.c\
 		min_cmd_pwd.c\
@@ -46,8 +47,10 @@ SRC :=	ft_free2d_char.c\
 		min_cmd_unsetenv.c\
 		min_env_add_var.c\
 		min_env_check_var.c\
+		min_env_get_val.c\
 		min_env_get_var.c\
 		min_env_get.c\
+		min_env_set_path.c\
 		min_env_set_val.c\
 		min_cmd_echo.c\
 		min_cmd_env.c\

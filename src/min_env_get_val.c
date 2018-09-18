@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   min_cmd_cd.c                                       :+:      :+:    :+:   */
+/*   min_env_get_val.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/18 09:23:00 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/18 11:40:03 by cterblan         ###   ########.fr       */
+/*   Created: 2018/09/18 10:22:06 by cterblan          #+#    #+#             */
+/*   Updated: 2018/09/18 11:33:06 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-int		min_cmd_cd(int ac, char **av, char ***env)
+char	*min_env_get_val(char ***env, char *var)
 {
 	int		i;
-	char	*tmp;
-
+	int		j;
+	int		len;
+	char	*val;
+	
 	i = 0;
-	if (ac <= 1)
-		ft_printf("\e[91mUsage:\n\tcd [PATH]\e[96m\n");
-	else if (av[1] && 0 == chdir(av[1]))
+	j = 0;
+	val = NULL;
+	len = ft_strlen(var);
+	while ((*env)[i] && 0 != ft_strncmp((*env)[i], var, len))
+		i++;
+	if ((*env)[i] && 0 == ft_strncmp((*env)[i], var, len))
 	{
-		tmp = min_env_get_val(env, "PWD=");
-		min_env_set_path(env, "OLDPWD=", tmp);
-		free(tmp);
-		tmp = (char *)ft_memalloc(4098 * sizeof(char *));
-		getcwd(tmp, 4098);
-		min_env_set_path(env, "PWD=", tmp);
-		
+		val = ft_strnew(ft_strlen((*env)[i]));
+		while ((*env)[i][j + len])
+		{
+			val[j] = (*env)[i][j + len];
+			j++;
+		}
 	}
-	else
-		ft_printf("\e[91mERROR: Invalid Path/Permissions\e[96m\n");
-	return (0);
+	return (val);
 }
