@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/14 15:46:19 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/18 14:53:56 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/18 16:13:44 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,9 @@ void	min_env_set_path(char ***env,char *name, char *path);
 */
 char	**min_sys_set_path(char ***env);
 char	*min_sys_scan_dir(char **av, char ***env);
+/*
+**	SHELL FUNCTIONS
+*/
+void	min_shell_var(char ***av, char ***env);
 
 #endif

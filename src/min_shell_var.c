@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   min_cmd_unsetenv.c                                 :+:      :+:    :+:   */
+/*   min_shell_var.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/18 08:30:44 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/18 16:29:49 by cterblan         ###   ########.fr       */
+/*   Created: 2018/09/18 15:19:17 by cterblan          #+#    #+#             */
+/*   Updated: 2018/09/18 16:12:17 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-int		min_cmd_unsetenv(int ac, char **av, char ***env)
+void	min_shell_var(char ***av, char ***env)
 {
+	char	*tmp;
+	char	*var;
 	int		i;
-	int		toggle;
 
-	i = 1;
-	toggle = 0;
-	if (ac == 1)
-		ft_printf("\e[91mUsage:\n\tunsetenv [VAR]\n\e[96m");
-	else if (ac > 1)
+	i = 0;
+	while ((*av)[i])
 	{
-		while (av[i])
+		if ((*av)[i][0] == '$')
 		{
-			if (min_env_check_var(*env, av[i]))
+			tmp = ft_strsub((*av)[i], 1, ft_strlen((*av)[i]));
+			var = min_env_get_var(tmp);
+			ft_strdel(&tmp);
+			if (min_env_check_var(*env, var))
 			{
-				min_env_unset(env, av[i]);
-				toggle = 1;
+				tmp = (*av)[i];
+				(*av)[i] = min_env_get_val(env, var);
+				ft_strdel(&tmp);
 			}
-			i++;
+			free(var); //WHAT ?
 		}
-	
-	if (toggle == 0)
-		ft_printf("\e[91mVARIABLE not found!\e[96m\n");
+		i++;
 	}
-	return (0);
 }
