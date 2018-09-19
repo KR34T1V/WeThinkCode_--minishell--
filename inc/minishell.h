@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/14 15:46:19 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/19 09:39:27 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/19 14:02:20 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_free2d_char(char **array);
 int		min_welcome(void);
 int		min_cmd_help(void);
 void	min_cmd_get(char *cmd, char ***env);
-char **	min_env_get(char **env);
+char	**min_env_get(char **env);
 int		min_cmd_builtin(int ac, char **av, char ***env);
 int		min_cmd_exe_select(char **av, char ***env);
 int		min_cmd_exe(char **av, char ***env);
@@ -49,7 +49,7 @@ char	*min_env_get_var(char *str);
 void	min_env_set_val(char ***env, char *var, char *val);
 char	*min_env_get_val(char ***env, char *var);
 void	min_env_unset(char ***env, char *var);
-void	min_env_set_path(char ***env,char *name, char *path);
+void	min_env_set_path(char ***env, char *name, char *path);
 /*
 ** SYSTEM FUNCTIONS
 */
