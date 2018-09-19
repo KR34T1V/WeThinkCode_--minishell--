@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 11:47:21 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/18 13:56:05 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/19 08:03:33 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,20 @@ char	**min_sys_set_path(char ***env)
 	char	**bin;
 
 	tmp = min_env_get_val(env, "PATH=");
-	bin = ft_strsplit(tmp, ':');
-	ft_strdel(&tmp);
-	i = 0;
-	while (bin[i])
+	if (tmp)
 	{
-		tmp = bin[i];
-		bin[i] = ft_strjoin(tmp, "/");
+		bin = ft_strsplit(tmp, ':');
 		ft_strdel(&tmp);
-		i++;
+		i = 0;
+		while (bin[i])
+		{
+			tmp = bin[i];
+			bin[i] = ft_strjoin(tmp, "/");
+			ft_strdel(&tmp);
+			i++;
+		}
+		return (bin);
 	}
-	return (bin);
+	else
+		return (NULL);
 }
