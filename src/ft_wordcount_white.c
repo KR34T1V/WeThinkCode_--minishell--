@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/08 13:07:50 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/16 09:07:31 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/19 10:39:23 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ int		ft_wordcount_white(const char *s)
 		{
 			while (ft_isspace(s[i]))
 				i++;
-			words++;
+			if ((!ft_isspace(s[i])) && (s[i] != '\0'))
+				words++;
 		}
 		i++;
 	}

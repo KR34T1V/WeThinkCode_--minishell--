@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/08 13:07:50 by cterblan          #+#    #+#             */
-/*   Updated: 2018/07/26 13:30:35 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/19 10:40:19 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ int	ft_wordcount(const char *s, char c)
 		{
 			while (s[i] == c)
 				i++;
-			words++;
+			if (s[i] != c && s[i] != '\0')
+				words++;
 		}
 		i++;
 	}

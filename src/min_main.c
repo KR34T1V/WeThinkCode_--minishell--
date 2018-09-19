@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/15 10:34:38 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/18 14:36:15 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/19 10:30:07 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int		main(void)
 		min_cmd_get(line, &environ);
 		ft_strdel(&line);
 	}
-	sleep(5);
 	ft_free2d_char(environ);
 	return (0);
 }
