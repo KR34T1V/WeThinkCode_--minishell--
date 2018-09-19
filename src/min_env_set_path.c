@@ -6,13 +6,13 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 10:31:51 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/19 08:52:09 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/19 14:13:06 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-void	min_env_set_path(char ***env,char *name, char *path)
+void	min_env_set_path(char ***env, char *name, char *path)
 {
 	char *var;
 	char *tmp;

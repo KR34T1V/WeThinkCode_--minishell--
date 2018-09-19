@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 09:23:00 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/19 11:43:26 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/19 14:06:19 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	min_cmd_cd_av(char *av, char ***env)
 		ft_printf("\e[91mERROR: Invalid Path/Permissions\e[96m\n");
 }
 
-int		min_cmd_cd(int ac, char **av, char ***env)
+int			min_cmd_cd(int ac, char **av, char ***env)
 {
 	char	*tmp;
 

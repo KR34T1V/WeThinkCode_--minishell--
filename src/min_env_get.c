@@ -6,13 +6,13 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/16 10:19:18 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/17 15:21:44 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/19 14:10:45 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-char ** min_env_get(char **env)
+char	**min_env_get(char **env)
 {
 	int		i;
 	char	**new;
@@ -26,5 +26,5 @@ char ** min_env_get(char **env)
 	}
 	new[i] = NULL;
 	i = 0;
-	return new;
+	return (new);
 }

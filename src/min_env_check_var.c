@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/16 11:47:34 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/18 10:39:39 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/19 14:08:37 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ int		min_env_check_var(char **env, char *var)
 			return (1);
 		i++;
 	}
-	return(0);
+	return (0);
 }

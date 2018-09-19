@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/15 14:00:26 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/19 08:44:44 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/19 14:07:14 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		min_cmd_exe(char **av, char ***env)
 		{
 			free(path);
 			ft_putendl("ERROR: fork failed\n");
-		return (-1);
+			return (-1);
 		}
 		else if (pid == 0)
 			execve(path, av, *env);
@@ -35,5 +35,5 @@ int		min_cmd_exe(char **av, char ***env)
 		if (path)
 			free(path);
 		return (0);
-		}
+	}
 }

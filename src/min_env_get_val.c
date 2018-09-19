@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 10:22:06 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/19 07:56:29 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/19 14:11:00 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*min_env_get_val(char ***env, char *var)
 	int		j;
 	int		len;
 	char	*val;
-	
+
 	i = 0;
 	j = 0;
 	val = NULL;
