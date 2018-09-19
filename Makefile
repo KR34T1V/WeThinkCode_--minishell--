@@ -6,7 +6,7 @@
 #    By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/07 10:04:12 by cterblan          #+#    #+#              #
-#    Updated: 2018/09/19 09:39:45 by cterblan         ###   ########.fr        #
+#    Updated: 2018/09/19 15:38:50 by cterblan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ LIB_DIR := lib
 ################################################################################
 #SRC:= ft_function.c
 SRC :=	ft_free2d_char.c\
+		ft_isdir.c\
 		ft_sizeof2d_char.c\
 		ft_strsplit_white.c\
 		ft_wordcount_white.c\
