@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 09:23:00 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/19 17:05:40 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/19 17:20:03 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,9 @@ int			min_cmd_cd(int ac, char **av, char ***env)
 			ft_printf("\e[91mERROR: Home variable not found!\e[96m\n");
 	}
 	else if (ac > 1)
+	{
+		min_shell_path(&av, env);
 		min_cmd_cd_av(av[1], env);
+	}
 	return (0);
 }
