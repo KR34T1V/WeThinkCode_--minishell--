@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/15 14:00:26 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/18 14:42:19 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/19 08:44:44 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		min_cmd_exe(char **av, char ***env)
 {
 	pid_t	pid;
 	char	*path;
-	
+
 	path = min_sys_scan_dir(av, env);
 	if (path == NULL)
 		return (1);

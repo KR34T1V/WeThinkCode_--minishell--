@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 12:09:58 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/19 08:05:26 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/19 08:43:37 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,11 @@ char	*min_sys_scan_dir(char **av, char ***env)
 				{
 					path = ft_strjoin(bins[i], av[0]);
 					ft_free2d_char(bins);
+					closedir(dir);
 					return (path);
 				}
 			}
+			closedir(dir);
 			i++;
 		}
 	}

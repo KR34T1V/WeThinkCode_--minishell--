@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 08:30:44 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/18 16:30:13 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/19 08:14:50 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,8 @@ int		min_cmd_unsetenv(int ac, char **av, char ***env)
 			}
 			i++;
 		}
-	
-	if (toggle == 0)
-		ft_printf("\e[91mVARIABLE not found!\e[96m\n");
+		if (toggle == 0)
+			ft_printf("\e[91mVARIABLE not found!\e[96m\n");
 	}
 	return (0);
 }
