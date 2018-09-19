@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 15:19:17 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/18 16:12:17 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/19 09:08:48 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	min_shell_var(char ***av, char ***env)
 				(*av)[i] = min_env_get_val(env, var);
 				ft_strdel(&tmp);
 			}
-			free(var); //WHAT ?
+			free(var);
 		}
 		i++;
 	}

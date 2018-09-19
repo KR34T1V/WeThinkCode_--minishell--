@@ -6,7 +6,7 @@
 #    By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/07 10:04:12 by cterblan          #+#    #+#              #
-#    Updated: 2018/09/18 16:15:42 by cterblan         ###   ########.fr        #
+#    Updated: 2018/09/19 09:39:45 by cterblan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,7 @@ SRC :=	ft_free2d_char.c\
 		min_env_set_val.c\
 		min_env_unset.c\
 		min_main.c\
+		min_shell_path.c\
 		min_shell_var.c\
 		min_sys_scan_dir.c\
 		min_sys_set_path.c\
