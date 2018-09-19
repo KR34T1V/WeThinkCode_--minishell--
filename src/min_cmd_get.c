@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/15 14:08:17 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/19 10:41:00 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/19 10:47:40 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	min_cmd_get(char *cmd, char ***env)
 	min_shell_var(&av, env);
 	i = min_cmd_builtin(ac, av, env);
 	if (i != 0)
-		i = min_cmd_exe_select(av, env); //FIX ME!
-	else if (i != 0)
+		i = min_cmd_exe_select(av, env);
+	if (i != 0)
 		ft_printf("\e[31mUnkown Command!\n\e[96m");
 	ft_free2d_char(av);
 }
