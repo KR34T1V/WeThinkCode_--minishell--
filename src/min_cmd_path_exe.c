@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/15 14:00:26 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/19 14:08:10 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/20 08:15:13 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		min_cmd_path_exe(char **av, char ***env)
 	pid_t	pid;
 	char	*path;
 
-	path = ft_strdup(av[0]);
+	path = min_sys_scan_path(av[0]);
 	if (path == NULL)
 		return (1);
 	pid = fork();

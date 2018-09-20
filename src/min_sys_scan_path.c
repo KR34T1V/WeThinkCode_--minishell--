@@ -1,44 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   min_cmd_exe_select.c                               :+:      :+:    :+:   */
+/*   min_sys_scan_path.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/18 14:45:49 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/20 08:06:32 by cterblan         ###   ########.fr       */
+/*   Created: 2018/09/20 08:10:25 by cterblan          #+#    #+#             */
+/*   Updated: 2018/09/20 08:20:04 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-int		check_av_path(char **av)
+char	*min_sys_scan_path(char *av)
 {
 	int		i;
 	char	*tmp;
 
-	if (av[0])
-	{
-		i = ft_strlen(av[0]);
-		while (i >= 0 && av[0] && av[0][i] != '/')
-			i--;
-		tmp = ft_strsub(av[0], 0, i);
-		if (ft_isdir(tmp))
-		{
-			ft_strdel(&tmp);
-			return (1);
-		}
-	}
-	return (0);
-}
-
-int		min_cmd_exe_select(char **av, char ***env)
-{
-	int	i;
-
-	if (check_av_path(av))
-		i = min_cmd_path_exe(av, env);
+	i = ft_strlen(av);
+	while (i >= 0 && av[i] && av[i] != '/')
+		i--;
+	tmp = ft_strsub(av, 0, i);
+	if (ft_isdir(tmp))
+		return (tmp);
 	else
-		i = min_cmd_exe(av, env);
-	return (i);
+		return (NULL);
 }

@@ -6,7 +6,7 @@
 #    By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/07 10:04:12 by cterblan          #+#    #+#              #
-#    Updated: 2018/09/19 15:38:50 by cterblan         ###   ########.fr        #
+#    Updated: 2018/09/20 08:16:10 by cterblan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,6 +64,7 @@ SRC :=	ft_free2d_char.c\
 		min_shell_path.c\
 		min_shell_var.c\
 		min_sys_scan_dir.c\
+		min_sys_scan_path.c\
 		min_sys_set_path.c\
 		min_welcome.c\
 #ADD SOURCE FILES HERE ^^^
