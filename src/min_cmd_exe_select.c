@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 14:45:49 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/20 08:24:07 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/20 08:54:49 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int		check_av_path(char **av)
 			ft_strdel(&tmp);
 			return (1);
 		}
+		ft_strdel(&tmp);
 	}
 	return (0);
 }
