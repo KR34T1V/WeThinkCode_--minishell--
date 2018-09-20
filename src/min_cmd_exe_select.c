@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 14:45:49 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/20 08:06:32 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/20 08:24:07 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		check_av_path(char **av)
 	if (av[0])
 	{
 		i = ft_strlen(av[0]);
-		while (i >= 0 && av[0] && av[0][i] != '/')
+		while (i > 0 && av[0] && av[0][i] != '/')
 			i--;
 		tmp = ft_strsub(av[0], 0, i);
 		if (ft_isdir(tmp))

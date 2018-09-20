@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 08:10:25 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/20 08:20:04 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/20 08:23:33 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*min_sys_scan_path(char *av)
 	char	*tmp;
 
 	i = ft_strlen(av);
-	while (i >= 0 && av[i] && av[i] != '/')
+	while (i > 0 && av[i] && av[i] != '/')
 		i--;
 	tmp = ft_strsub(av, 0, i);
 	if (ft_isdir(tmp))
