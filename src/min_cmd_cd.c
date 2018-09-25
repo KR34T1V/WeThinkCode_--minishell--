@@ -14,12 +14,10 @@
 
 static void	min_cmd_cd_av(char *av, char ***env)
 {
-	int		i;
 	char	*tmp;
 
 	if (av && 0 == chdir(av))
 	{
-		i = 0;
 		tmp = min_env_get_val(env, "PWD=");
 		min_env_set_path(env, "OLDPWD=", tmp);
 		free(tmp);

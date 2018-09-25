@@ -16,6 +16,7 @@
 # include "../lib/ft_printf/inc/ft_printf.h"
 # include "get_next_line.h"
 # include <sys/types.h>
+# include <sys/wait.h>
 # include <dirent.h>
 # include <sys/stat.h>
 

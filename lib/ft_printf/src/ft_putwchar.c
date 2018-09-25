@@ -44,7 +44,7 @@ int			ft_putwchar(wint_t wc)
 
 	str = ft_strnew(4);
 	rtn = 0;
-	if (wc >= 0 && wc <= 127)
+	if (wc <= 127)
 		rtn = 1;
 	else if (wc >= 128 && wc <= 2047)
 		rtn = 2;

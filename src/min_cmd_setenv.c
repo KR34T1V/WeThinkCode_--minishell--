@@ -14,11 +14,9 @@
 
 int		min_cmd_setenv(int ac, char **av, char ***env)
 {
-	int		i;
 	char	*tmp;
 	char	*var;
 
-	i = 1;
 	if (ac <= 2)
 		ft_printf("\e[91mUsage:\n\tsetenv [VARIABLE] [VALUE]\e[96m\n");
 	else if (ac > 2)

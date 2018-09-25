@@ -6,7 +6,7 @@
 /*   By: cterblan <cterblan@student.wethinkcode>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 12:09:58 by cterblan          #+#    #+#             */
-/*   Updated: 2018/09/19 17:10:13 by cterblan         ###   ########.fr       */
+/*   Updated: 2018/09/25 17:27:25 by cterblan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,21 @@ char	*min_sys_scan_dir(char **av, char ***env)
 
 	i = -1;
 	bins = min_sys_set_path(env);
-	if (bins)
-		while (bins[i] && ft_isdir(bins[++i]))
+		while (bins[++i])
 		{
-			dir = opendir(bins[i]);
-			while ((ent = readdir(dir)) != NULL)
-				if (av[0] && 0 == ft_strcmp(av[0], ent->d_name))
-				{
-					path = ft_strjoin(bins[i], av[0]);
-					ft_free2d_char(bins);
-					closedir(dir);
-					return (path);
-				}
-			closedir(dir);
+			if (ft_isdir(bins[++i]))
+			{
+				dir = opendir(bins[i]);
+				while ((ent = readdir(dir)) != NULL)
+					if (av[0] && 0 == ft_strcmp(av[0], ent->d_name))
+					{
+						path = ft_strjoin(bins[i], av[0]);
+						ft_free2d_char(bins);
+						closedir(dir);
+						return (path);
+					}
+				closedir(dir);
+			}
 		}
 	ft_free2d_char(bins);
 	return (NULL);

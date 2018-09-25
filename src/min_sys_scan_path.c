@@ -32,13 +32,11 @@ static void	min_sys_scan_get_dir(char *av, char **path, char **name)
 
 char		*min_sys_scan_path(char *av)
 {
-	int				i;
 	char			*path;
 	char			*name;
 	DIR				*dir;
 	struct dirent	*ent;
 
-	i = -1;
 	min_sys_scan_get_dir(av, &path, &name);
 	if (path)
 	{
