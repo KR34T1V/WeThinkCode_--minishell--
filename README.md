@@ -2,6 +2,8 @@
 ## Attempt at creating a minishell.
 Minishell is a project from the WeThinkCode_ curriculum. It is a mini-shell with built in commands written in C.
 
+![](resources/preview.gif)
+
 ### FEATURES
 ###### Colorfull Shell Lines
 ###### Built in Navigation Command (eg. cd, pwd)
